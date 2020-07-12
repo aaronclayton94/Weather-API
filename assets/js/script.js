@@ -98,7 +98,6 @@ function getWeather(city) {
 
 function buildCurrentWeather(data) {
   if (data != null) {
-    console.log(units, metricUnits, data.wind.speed);
     currentWeatherDiv.empty();
     currentWeatherDiv.append(
       $("<h3>").text(
@@ -302,10 +301,6 @@ function performAPIGETCall(queryURL, callbackFunction) {
   $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
     callbackFunction(response);
   });
-}
-
-function testFunction(mFunction, ...args) {
-  console.log(mFunction(...args));
 }
 
 function newDay(date, icon, description, temp, humidity) {
